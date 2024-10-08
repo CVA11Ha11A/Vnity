@@ -61,7 +61,8 @@ void VAnimator::CreateAnimation(const wstring& _strName, VTexture* _pTex, Vector
 	pAnim->SetName(_strName);
 	pAnim->m_pAnimator = this;
 	pAnim->Create(_pTex, _vLT, _vSliceSize, _vStep, _fDuration, _iFrameCount);
-
+	
+	
 	m_mapAnim.insert(make_pair(_strName, pAnim));
 }		// CreateAnimation()
 
