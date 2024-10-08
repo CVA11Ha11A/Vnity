@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{3820e648-c5fd-41a5-93c0-9af8306f8179}</ProjectGuid>
+    <RootNamespace>VnityProject</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <EnableUnitySupport>true</EnableUnitySupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <EnableUnitySupport>true</EnableUnitySupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <EnableUnitySupport>true</EnableUnitySupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <EnableUnitySupport>true</EnableUnitySupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>Vnity</TargetName>
+    <OutDir>$(SolutionDir)Output\bin_DEBUG\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>Vnity</TargetName>
+    <OutDir>$(SolutionDir)Output\bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>Vnity</TargetName>
+    <OutDir>$(SolutionDir)Output\bin_DEBUG\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>Vnity</TargetName>
+    <OutDir>$(SolutionDir)Output\bin\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MaxFilesInUnityFile>0</MaxFilesInUnityFile>
+      <UnityFilesDirectory>$(projectDir)\Unity\</UnityFilesDirectory>
+      <MinFilesInUnityFile>10</MinFilesInUnityFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MinFilesInUnityFile>10</MinFilesInUnityFile>
+      <UnityFilesDirectory>$(projectDir)\Unity\</UnityFilesDirectory>
+      <MaxFilesInUnityFile>0</MaxFilesInUnityFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MaxFilesInUnityFile>0</MaxFilesInUnityFile>
+      <UnityFilesDirectory>$(projectDir)\Unity\</UnityFilesDirectory>
+      <MinFilesInUnityFile>10</MinFilesInUnityFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MinFilesInUnityFile>10</MinFilesInUnityFile>
+      <UnityFilesDirectory>$(projectDir)\Unity\</UnityFilesDirectory>
+      <MaxFilesInUnityFile>0</MaxFilesInUnityFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="GFunc.h" />
+    <ClInclude Include="VGround.h" />
+    <ClInclude Include="VRigidBody.h" />
+    <ClInclude Include="SelectGDI.h" />
+    <ClInclude Include="VAI.h" />
+    <ClInclude Include="VAnimation.h" />
+    <ClInclude Include="VAnimator.h" />
+    <ClInclude Include="VBullet.h" />
+    <ClInclude Include="VButtonUI.h" />
+    <ClInclude Include="VCamera.h" />
+    <ClInclude Include="VCollider.h" />
+    <ClInclude Include="VCollisionManager.h" />
+    <ClInclude Include="VCore.h" />
+    <ClInclude Include="VEventManager.h" />
+    <ClInclude Include="VGlobal.h" />
+    <ClInclude Include="VIdleState.h" />
+    <ClInclude Include="VKeyManager.h" />
+    <ClInclude Include="define.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="struct.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="VMonFactory.h" />
+    <ClInclude Include="VMonster.h" />
+    <ClInclude Include="Vnity_Project.h" />
+    <ClInclude Include="VObject.h" />
+    <ClInclude Include="VPanelUI.h" />
+    <ClInclude Include="VPathManager.h" />
+    <ClInclude Include="VPlayer.h" />
+    <ClInclude Include="VResource.h" />
+    <ClInclude Include="VResourceManager.h" />
+    <ClInclude Include="VScene.h" />
+    <ClInclude Include="VSceneManager.h" />
+    <ClInclude Include="VScene_Start.h" />
+    <ClInclude Include="VScene_Tool.h" />
+    <ClInclude Include="VSound.h" />
+    <ClInclude Include="VSoundManager.h" />
+    <ClInclude Include="VState.h" />
+    <ClInclude Include="VTexture.h" />
+    <ClInclude Include="VTile.h" />
+    <ClInclude Include="VTimeManager.h" />
+    <ClInclude Include="VTraceState.h" />
+    <ClInclude Include="VUI.h" />
+    <ClInclude Include="VUIManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GFunc.cpp" />
+    <ClCompile Include="VGround.cpp" />
+    <ClCompile Include="VRigidBody.cpp" />
+    <ClCompile Include="SelectGDI.cpp" />
+    <ClCompile Include="VAI.cpp" />
+    <ClCompile Include="VAnimation.cpp" />
+    <ClCompile Include="VAnimator.cpp" />
+    <ClCompile Include="VBullet.cpp" />
+    <ClCompile Include="VButtonUI.cpp" />
+    <ClCompile Include="VCamera.cpp" />
+    <ClCompile Include="VCollider.cpp" />
+    <ClCompile Include="VCollisionManager.cpp" />
+    <ClCompile Include="VCore.cpp" />
+    <ClCompile Include="VEventManager.cpp" />
+    <ClCompile Include="VIdleState.cpp" />
+    <ClCompile Include="VKeyManager.cpp" />
+    <ClCompile Include="VMonFactory.cpp" />
+    <ClCompile Include="VMonster.cpp" />
+    <ClCompile Include="Vnity_Project.cpp" />
+    <ClCompile Include="VObject.cpp" />
+    <ClCompile Include="VPanelUI.cpp" />
+    <ClCompile Include="VPathManager.cpp" />
+    <ClCompile Include="VPlayer.cpp" />
+    <ClCompile Include="VResource.cpp" />
+    <ClCompile Include="VResourceManager.cpp" />
+    <ClCompile Include="VScene.cpp" />
+    <ClCompile Include="VSceneManager.cpp" />
+    <ClCompile Include="VScene_Start.cpp" />
+    <ClCompile Include="VScene_Tool.cpp" />
+    <ClCompile Include="VSound.cpp" />
+    <ClCompile Include="VSoundManager.cpp" />
+    <ClCompile Include="VState.cpp" />
+    <ClCompile Include="VTexture.cpp" />
+    <ClCompile Include="VTile.cpp" />
+    <ClCompile Include="VTimeManager.cpp" />
+    <ClCompile Include="VTraceState.cpp" />
+    <ClCompile Include="VUI.cpp" />
+    <ClCompile Include="VUIManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Vnity_Project.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico" />
+    <Image Include="Vnity_Project.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

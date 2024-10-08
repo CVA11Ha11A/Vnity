@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{17b99103-1651-42e8-b233-e366d13ca14b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Default">
+      <UniqueIdentifier>{220fc7c3-ee37-4f53-8cbd-245b06eb3a05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Default\리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Engine\01.Header">
+      <UniqueIdentifier>{3e363ebd-3727-4b5d-806b-669d7ab61ac3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02.Core">
+      <UniqueIdentifier>{d08595a9-fdda-4196-a654-0327075cf6b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Manager">
+      <UniqueIdentifier>{7dfdf643-06bc-41a4-8e11-f9aac30a7400}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Object">
+      <UniqueIdentifier>{2062b5fa-5a25-441a-8140-74ada121351c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Manager\TimeManager">
+      <UniqueIdentifier>{c079ab15-a42c-4b03-94f0-1123fade3545}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Manager\KeyManager">
+      <UniqueIdentifier>{f04f8f82-85e5-41ca-b3cf-892cf6de37d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05.Scene">
+      <UniqueIdentifier>{3208b8bc-5ebc-4d4d-958a-fbe9e82c5664}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Manager\SceneManager">
+      <UniqueIdentifier>{8abe7d95-fd49-4430-911b-d33f8f2fe998}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05.Scene\Scene_Start">
+      <UniqueIdentifier>{dacb3c8c-a4fc-49d5-9a70-7a628794066e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05.Scene\Scene_Tool">
+      <UniqueIdentifier>{db555682-73cf-488f-81dd-16247d263917}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Object\T_Player">
+      <UniqueIdentifier>{e2bdb8fd-4d9d-4af5-a8ff-79501539b0b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Object\T_Monster">
+      <UniqueIdentifier>{3abdbacc-e2c2-4be9-aee5-0eef428dd448}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Object\T_Bullet">
+      <UniqueIdentifier>{e1aa01cc-5f50-4402-b16c-23a2785ce25f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06.Resource">
+      <UniqueIdentifier>{5b3af6fe-ad7d-486e-8a62-d44d200b7e92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06.Resource\Texture">
+      <UniqueIdentifier>{fd2ce0da-d80f-45a8-a048-1d259a6c4906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06.Resource\Sound">
+      <UniqueIdentifier>{e9d0ae94-8fc8-476d-930f-a9441001ce69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Manager\PathManager">
+      <UniqueIdentifier>{cbe8224d-b3c0-4d76-8c5c-87d7c9ee104e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Manager\ResourceManager">
+      <UniqueIdentifier>{add58cb8-b2a2-4d7f-b9c2-991eed08071e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\07.Component">
+      <UniqueIdentifier>{8ac5eb4e-5da8-4b31-8b27-2a2c6ba49dab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\08.Module">
+      <UniqueIdentifier>{9e1e8c6a-e648-4ba2-a116-d0ed57573f7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Manager\VCollisionManager">
+      <UniqueIdentifier>{974c80c9-502c-4967-8145-2d9c8cd742b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Manager\VEventManager">
+      <UniqueIdentifier>{ae244c95-2bd4-4e7f-be7b-b901ae5234c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\07.Component\Animator">
+      <UniqueIdentifier>{2e92e676-a236-4216-ae6a-fc495cf4c64e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\07.Component\Collider">
+      <UniqueIdentifier>{d0bcc453-2cfa-4211-a7ec-1642b7b2b398}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\07.Component\Animator\Animation">
+      <UniqueIdentifier>{43a52d4e-9fdf-4433-8b79-f123c062f44e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Manager\Camera">
+      <UniqueIdentifier>{2e3bd429-7482-4d4d-be10-8bc13a77181c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Object\Tile">
+      <UniqueIdentifier>{1b8c839d-be47-4879-b56e-9815ee270ba0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Object\UI">
+      <UniqueIdentifier>{276304cd-7f4e-462c-992b-4d5a35587c17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Manager\UIManager">
+      <UniqueIdentifier>{c1e4c787-d6f1-4c07-a65b-db4e3cd1269a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Object\UI\ButtonUI">
+      <UniqueIdentifier>{e50341ed-14e3-4f10-8f2c-b5d0f8063eb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Object\UI\PanelUI">
+      <UniqueIdentifier>{d403cb72-f24a-4f8f-b5ec-ec900da906e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\08.Module\AI">
+      <UniqueIdentifier>{a2d0357b-02a6-44d5-8cd0-03b9eb1d6526}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\08.Module\AI\State">
+      <UniqueIdentifier>{068b766c-cec4-4995-aab2-bd5bc937f5b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\08.Module\AI\State\Idle">
+      <UniqueIdentifier>{749f9886-9c70-4a5d-b6d1-94b8e217862e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\08.Module\AI\State\Trace">
+      <UniqueIdentifier>{af4789b1-fed5-457f-b13f-c947c87ac8a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\08.Module\AI\State\Attack">
+      <UniqueIdentifier>{33ed612a-3f8b-49ca-bd8d-96b64c4f77a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\08.Module\AI\State\Dead">
+      <UniqueIdentifier>{87cdd253-6267-4834-9940-c4f524bb72a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\09.Factory">
+      <UniqueIdentifier>{ad037b58-38d4-4332-8ef4-39dd9de9acd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\09.Factory\MonFactory">
+      <UniqueIdentifier>{781b2166-c20e-40b0-aa02-36f668f3656f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\07.Component\Rigidbody">
+      <UniqueIdentifier>{790e0b84-e55e-4b16-b665-6ad0af4de1ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Object\T_Ground">
+      <UniqueIdentifier>{7b64abaa-611f-4b6a-894c-6ae4d05c8b84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Manager\SoundManager">
+      <UniqueIdentifier>{a232d29c-9797-48d9-b607-16f02e5fd875}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="VCore.h">
+      <Filter>Engine\02.Core</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Vnity_Project.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>Engine\01.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="VKeyManager.h">
+      <Filter>Engine\03.Manager\KeyManager</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="VObject.h">
+      <Filter>Engine\04.Object</Filter>
+    </ClInclude>
+    <ClInclude Include="struct.h">
+      <Filter>Engine\01.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="VTimeManager.h">
+      <Filter>Engine\03.Manager\TimeManager</Filter>
+    </ClInclude>
+    <ClInclude Include="VScene.h">
+      <Filter>Engine\05.Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="VScene_Start.h">
+      <Filter>Engine\05.Scene\Scene_Start</Filter>
+    </ClInclude>
+    <ClInclude Include="VSceneManager.h">
+      <Filter>Engine\03.Manager\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="VPlayer.h">
+      <Filter>Engine\04.Object\T_Player</Filter>
+    </ClInclude>
+    <ClInclude Include="VMonster.h">
+      <Filter>Engine\04.Object\T_Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="VBullet.h">
+      <Filter>Engine\04.Object\T_Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="VResource.h">
+      <Filter>Engine\06.Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="VTexture.h">
+      <Filter>Engine\06.Resource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="VSound.h">
+      <Filter>Engine\06.Resource\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="VPathManager.h">
+      <Filter>Engine\03.Manager\PathManager</Filter>
+    </ClInclude>
+    <ClInclude Include="VResourceManager.h">
+      <Filter>Engine\03.Manager\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectGDI.h">
+      <Filter>Engine\08.Module</Filter>
+    </ClInclude>
+    <ClInclude Include="VEventManager.h">
+      <Filter>Engine\03.Manager\VEventManager</Filter>
+    </ClInclude>
+    <ClInclude Include="VCollisionManager.h">
+      <Filter>Engine\03.Manager\VCollisionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GFunc.h">
+      <Filter>Engine\01.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="VScene_Tool.h">
+      <Filter>Engine\05.Scene\Scene_Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="VCollider.h">
+      <Filter>Engine\07.Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="VAnimator.h">
+      <Filter>Engine\07.Component\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="VAnimation.h">
+      <Filter>Engine\07.Component\Animator\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="VCamera.h">
+      <Filter>Engine\03.Manager\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="VGlobal.h">
+      <Filter>Engine\01.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="VTile.h">
+      <Filter>Engine\04.Object\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="VUIManager.h">
+      <Filter>Engine\03.Manager\UIManager</Filter>
+    </ClInclude>
+    <ClInclude Include="VUI.h">
+      <Filter>Engine\04.Object\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="VPanelUI.h">
+      <Filter>Engine\04.Object\UI\PanelUI</Filter>
+    </ClInclude>
+    <ClInclude Include="VButtonUI.h">
+      <Filter>Engine\04.Object\UI\ButtonUI</Filter>
+    </ClInclude>
+    <ClInclude Include="VAI.h">
+      <Filter>Engine\08.Module\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="VState.h">
+      <Filter>Engine\08.Module\AI\State</Filter>
+    </ClInclude>
+    <ClInclude Include="VIdleState.h">
+      <Filter>Engine\08.Module\AI\State\Idle</Filter>
+    </ClInclude>
+    <ClInclude Include="VTraceState.h">
+      <Filter>Engine\08.Module\AI\State\Trace</Filter>
+    </ClInclude>
+    <ClInclude Include="VMonFactory.h">
+      <Filter>Engine\09.Factory\MonFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="VRigidBody.h">
+      <Filter>Engine\07.Component\Rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="VGround.h">
+      <Filter>Engine\04.Object\T_Ground</Filter>
+    </ClInclude>
+    <ClInclude Include="VSoundManager.h">
+      <Filter>Engine\03.Manager\SoundManager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Vnity_Project.rc">
+      <Filter>Default\리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>Default\리소스 파일</Filter>
+    </Image>
+    <Image Include="Vnity_Project.ico">
+      <Filter>Default\리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="VCore.cpp">
+      <Filter>Engine\02.Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Vnity_Project.cpp">
+      <Filter>Default</Filter>
+    </ClCompile>
+    <ClCompile Include="VKeyManager.cpp">
+      <Filter>Engine\03.Manager\KeyManager</Filter>
+    </ClCompile>
+    <ClCompile Include="VObject.cpp">
+      <Filter>Engine\04.Object</Filter>
+    </ClCompile>
+    <ClCompile Include="VTimeManager.cpp">
+      <Filter>Engine\03.Manager\TimeManager</Filter>
+    </ClCompile>
+    <ClCompile Include="VScene.cpp">
+      <Filter>Engine\05.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="VSceneManager.cpp">
+      <Filter>Engine\03.Manager\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="VScene_Start.cpp">
+      <Filter>Engine\05.Scene\Scene_Start</Filter>
+    </ClCompile>
+    <ClCompile Include="VPlayer.cpp">
+      <Filter>Engine\04.Object\T_Player</Filter>
+    </ClCompile>
+    <ClCompile Include="VMonster.cpp">
+      <Filter>Engine\04.Object\T_Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="VBullet.cpp">
+      <Filter>Engine\04.Object\T_Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="VResource.cpp">
+      <Filter>Engine\06.Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="VTexture.cpp">
+      <Filter>Engine\06.Resource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="VSound.cpp">
+      <Filter>Engine\06.Resource\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="VPathManager.cpp">
+      <Filter>Engine\03.Manager\PathManager</Filter>
+    </ClCompile>
+    <ClCompile Include="VResourceManager.cpp">
+      <Filter>Engine\03.Manager\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectGDI.cpp">
+      <Filter>Engine\08.Module</Filter>
+    </ClCompile>
+    <ClCompile Include="VEventManager.cpp">
+      <Filter>Engine\03.Manager\VEventManager</Filter>
+    </ClCompile>
+    <ClCompile Include="VCollisionManager.cpp">
+      <Filter>Engine\03.Manager\VCollisionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GFunc.cpp">
+      <Filter>Engine\01.Header</Filter>
+    </ClCompile>
+    <ClCompile Include="VScene_Tool.cpp">
+      <Filter>Engine\05.Scene\Scene_Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="VCollider.cpp">
+      <Filter>Engine\07.Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="VAnimator.cpp">
+      <Filter>Engine\07.Component\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="VAnimation.cpp">
+      <Filter>Engine\07.Component\Animator\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="VCamera.cpp">
+      <Filter>Engine\03.Manager\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="VTile.cpp">
+      <Filter>Engine\04.Object\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="VUIManager.cpp">
+      <Filter>Engine\03.Manager\UIManager</Filter>
+    </ClCompile>
+    <ClCompile Include="VUI.cpp">
+      <Filter>Engine\04.Object\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="VPanelUI.cpp">
+      <Filter>Engine\04.Object\UI\PanelUI</Filter>
+    </ClCompile>
+    <ClCompile Include="VButtonUI.cpp">
+      <Filter>Engine\04.Object\UI\ButtonUI</Filter>
+    </ClCompile>
+    <ClCompile Include="VAI.cpp">
+      <Filter>Engine\08.Module\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="VState.cpp">
+      <Filter>Engine\08.Module\AI\State</Filter>
+    </ClCompile>
+    <ClCompile Include="VIdleState.cpp">
+      <Filter>Engine\08.Module\AI\State\Idle</Filter>
+    </ClCompile>
+    <ClCompile Include="VTraceState.cpp">
+      <Filter>Engine\08.Module\AI\State\Trace</Filter>
+    </ClCompile>
+    <ClCompile Include="VMonFactory.cpp">
+      <Filter>Engine\09.Factory\MonFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="VRigidBody.cpp">
+      <Filter>Engine\07.Component\Rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="VGround.cpp">
+      <Filter>Engine\04.Object\T_Ground</Filter>
+    </ClCompile>
+    <ClCompile Include="VSoundManager.cpp">
+      <Filter>Engine\03.Manager\SoundManager</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
