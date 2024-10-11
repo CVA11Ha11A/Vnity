@@ -8,6 +8,19 @@ https://www.youtube.com/watch?v=dlFr-OnHlWU&list=PL4SIC1d_ab-ZLg4TvAO5R4nqlJTyJX
 상시 업데이트예정이며 해당 프로그램으로 게임도 만들어보며 계속 업데이트 할 예정입니다.
 
 <details>
+  <summary><b>라이프사이클</b></summary>
+  ManagerUpdate(Input, Time, Camera)
+현재사이클
+SceneUpdate(Objcet Awake)
+SceneUpdate(Objcet Start)
+SceneUpdate(Objcet Update)
+Collistion, Rigidbody
+UI
+Render
+Event(CreateObject ,Destroy, SceneChange)  
+</details>
+
+<details>
   <summary>Object</summary>
   1. DonDestroy 추가
     a. 씬이동시 파괴 안되도록 제작
