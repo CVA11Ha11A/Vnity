@@ -70,6 +70,7 @@ VPlayer::~VPlayer()
 
 void VPlayer::Awake()
 {
+
 }
 
 void VPlayer::Start()

@@ -253,8 +253,7 @@ void VAnimation::Load1ByteVer(const wstring& _strRelativePath)
 
 	// 프레임 개수
 	FScanf(szBuff, pFile);
-	int iFrameCount = 0;
-	//fscanf_s(pFile, "%d", &iFrameCount);	TODO : 해당 함수 테스트 필요 (텍스쳐에서 막혔었음)
+	int iFrameCount = 0;	
 
 	tAnimFrm frm = {};
 

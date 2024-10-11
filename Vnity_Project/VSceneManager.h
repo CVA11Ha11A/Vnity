@@ -14,7 +14,12 @@ private:
 
 public:
 	void Init();
+
+	// ªÁ¿Ã≈¨
+	void Awake();
+	void Start();
 	void Update();
+
 	void Render(HDC _dc);
 
 public:

@@ -39,43 +39,86 @@ VScene::~VScene()
 void VScene::AddObject(VObject* _pObj, GROUP_TYPE _eType)
 {
 	m_arrObj[(UINT)_eType].push_back(_pObj);
-}
+
+	tObjInit init = _pObj->GetObjInitCopy();
+
+	if (init.isAwake == false)
+	{
+		m_vAwakeObjList.push_back(_pObj);
+	}
+	if (init.isStart == false)
+	{
+		m_vStartObjList.push_back(_pObj);
+	}
+		
+}		// AddObject()
 
 
 
 void VScene::Awake()
 {
-	for (UINT i = 0; i < (UINT)GROUP_TYPE::END; ++i)
+#pragma region LEGACY
+	//for (UINT i = 0; i < (UINT)GROUP_TYPE::END; ++i)
+	//{
+	//	for (size_t j = 0; j < m_arrObj[i].size(); ++j)
+	//	{
+	//		if (m_arrObj[i][j] == nullptr)
+	//		{
+	//			assert(nullptr);
+	//			continue;
+	//		}
+	//		m_arrObj[i][j]->Awake();
+	//	}
+	//}
+#pragma endregion LEGACY
+
+	for (size_t i = 0; i < m_vAwakeObjList.size(); ++i)
 	{
-		for (size_t j = 0; j < m_arrObj[i].size(); ++j)
+		if (m_vAwakeObjList[i] == nullptr)
 		{
-			if (m_arrObj[i][j] == nullptr)
-			{
-				assert(nullptr);
-				continue;
-			}
-			m_arrObj[i][j]->Awake();
+			assert(nullptr);
+			continue;
 		}
+
+		m_vAwakeObjList[i]->Awake();
+		tObjInit& init = m_vAwakeObjList[i]->GetObjInitRef();
+		init.isAwake = true;
 	}
-}
+	m_vAwakeObjList.clear();
+}		// Awake()
 
 void VScene::Start()
-{	// TODO : Awake, Start함수 라이프사이클로 돌려야함 (현재기준 씬 Enter에서 1회 호출 24.10.05)
-	for (UINT i = 0; i < (UINT)GROUP_TYPE::END; ++i)
+{
+#pragma region LEGACY
+	//for (UINT i = 0; i < (UINT)GROUP_TYPE::END; ++i)
+	//{
+	//	for (size_t j = 0; j < m_arrObj[i].size(); ++j)
+	//	{
+	//		if (m_arrObj[i][j] != nullptr)
+	//		{
+	//			VObject* temp = m_arrObj[i][j];
+	//			m_arrObj[i][j]->Start();
+	//		}
+	//		else
+	//		{
+	//			// Pass
+	//		}
+	//	}
+	//}
+#pragma endregion LEGACY
+
+	for (size_t i = 0; i < m_vStartObjList.size(); ++i)
 	{
-		for (size_t j = 0; j < m_arrObj[i].size(); ++j)
+		if (m_vStartObjList[i] == nullptr)
 		{
-			if (m_arrObj[i][j] != nullptr)
-			{
-				VObject* temp = m_arrObj[i][j];
-				m_arrObj[i][j]->Start();
-			}
-			else
-			{
-				// Pass
-			}
+			assert(nullptr);
+			continue;
 		}
+		m_vStartObjList[i]->Start();		
+		tObjInit& init = m_vStartObjList[i]->GetObjInitRef();
+		init.isStart = true;
 	}
+	m_vStartObjList.clear();
 }		// Start()
 
 void VScene::Update()
@@ -208,7 +251,7 @@ void VScene::DeleteGroup(GROUP_TYPE _eTarget)
 
 			// 자신이 가지고 있던 지우면 안되는 오브젝트를 다음씬에 넘긴후 현재의 인덱스를 nullptr로 할당			
 			VSceneManager::GetInst()->GetScene((E_SCENE_TYPE)nextScene.lParam)
-				->AddObject(targetVector[i], targetVector[i]->GetObjGroup());						
+				->AddObject(targetVector[i], targetVector[i]->GetObjGroup());
 		}
 	}
 	targetVector.clear();

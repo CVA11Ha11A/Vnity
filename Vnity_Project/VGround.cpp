@@ -60,7 +60,7 @@ void VGround::OnCollisionEnter(VCollider* _pOther)
 }		// OnCollisionEnter()
 
 void VGround::OnCollisionStay(VCollider* _pOther)
-{	// TODO : 해당 Enter Stay함수 내용을 RigidBody , Collider에서 서로 커플링이 되어서 처리해야할거같음
+{
 	VObject* pOtherObj = _pOther->GetObj();
 	if (pOtherObj->GetName() == L"Player")
 	{

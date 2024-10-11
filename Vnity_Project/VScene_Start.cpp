@@ -167,7 +167,7 @@ void VScene_Start::SceneEnter()
 	VCamera::GetInst()->FadeOut(0.5f);
 	VCamera::GetInst()->FadeIn(0.5f);
 
-	Start();
+	//Start();
 }
 
 void VScene_Start::SceneExit()
