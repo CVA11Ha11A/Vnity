@@ -172,6 +172,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="GFunc.h" />
+    <ClInclude Include="VAction.h" />
     <ClInclude Include="VGround.h" />
     <ClInclude Include="VRigidBody.h" />
     <ClInclude Include="SelectGDI.h" />
@@ -219,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GFunc.cpp" />
+    <ClCompile Include="VAction.cpp" />
     <ClCompile Include="VGround.cpp" />
     <ClCompile Include="VRigidBody.cpp" />
     <ClCompile Include="SelectGDI.cpp" />

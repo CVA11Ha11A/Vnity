@@ -41,6 +41,16 @@ void VSceneManager::Init()
 	m_pCurScene->SceneEnter();
 }
 
+void VSceneManager::Awake()
+{
+	m_pCurScene->Awake();
+}
+
+void VSceneManager::Start()
+{
+	m_pCurScene->Start();
+}
+
 void VSceneManager::Update()
 {
 	m_pCurScene->Update();

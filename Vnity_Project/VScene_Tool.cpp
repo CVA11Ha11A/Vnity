@@ -96,6 +96,11 @@ void VScene_Tool::Update()
 		LoadTileData();
 	}
 
+	if (KEY_ENTER(KEY::SPACE))
+	{
+		ChangeScene(E_SCENE_TYPE::START);
+	}
+
 }		// Update()
 
 void VScene_Tool::SetTileIdx()

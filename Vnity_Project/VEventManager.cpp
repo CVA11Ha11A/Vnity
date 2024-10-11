@@ -24,6 +24,7 @@ void VEventManager::Update()
 
 	for (size_t i = 0; i < m_vecDeadObj.size(); ++i)
 	{	// for : Dead처리된 오브젝트 제거
+		int i1 = 0;
 		delete m_vecDeadObj[i];
 	}
 	m_vecDeadObj.clear();
@@ -82,3 +83,20 @@ void VEventManager::Execute(const tEvent& _event)
 	}
 
 }		// Execute()
+
+tEvent VEventManager::FindNextEvent(E_EVENT_TYPE _findEvent)
+{
+	tEvent findEvent = {};
+
+	for (size_t i = 0; i < m_vecEvent.size(); ++i)
+	{
+		if (m_vecEvent[i].eEven == _findEvent)
+		{
+			findEvent = m_vecEvent[i];
+			return findEvent;
+		}
+		
+	}
+
+	return findEvent;
+}

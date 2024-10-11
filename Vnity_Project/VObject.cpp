@@ -13,6 +13,9 @@ VObject::VObject()
 	, m_pAnimator(nullptr)
 	, m_pRigidBody(nullptr)
 	, m_bAlive(true)
+	, m_bIsDonDestroy(false)
+	, m_eObjGroup(GROUP_TYPE::DEFAULT)
+	, m_tInit{m_tInit.isAwake = false, m_tInit.isStart = false }
 {
 }
 
@@ -20,10 +23,13 @@ VObject::VObject(const VObject& _origin)
 	:m_strName(_origin.m_strName)
 	, m_vPos(_origin.m_vPos)
 	, m_vScale(_origin.m_vScale)
+	, m_bIsDonDestroy(_origin.m_bIsDonDestroy)
+	, m_eObjGroup(_origin.m_eObjGroup)
 	, m_pCollider(nullptr)
 	, m_pAnimator(nullptr)
 	, m_pRigidBody(nullptr)
 	, m_bAlive(true)
+	, m_tInit{ m_tInit.isAwake = _origin.m_tInit.isAwake,m_tInit.isStart = _origin.m_tInit.isStart }
 {
 	if (_origin.m_pCollider != nullptr)
 	{
@@ -56,6 +62,7 @@ VObject::~VObject()
 	{
 		delete m_pAnimator;
 	}
+
 	if (m_pRigidBody != nullptr)
 	{
 		delete m_pRigidBody;

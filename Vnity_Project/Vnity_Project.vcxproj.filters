@@ -137,6 +137,9 @@
     <Filter Include="Engine\03.Manager\SoundManager">
       <UniqueIdentifier>{a232d29c-9797-48d9-b607-16f02e5fd875}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\01.Header\MyDefaultClass">
+      <UniqueIdentifier>{c18dc2ea-b33a-4215-8612-4468a2f6f584}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="VCore.h">
@@ -272,6 +275,9 @@
     <ClInclude Include="VSoundManager.h">
       <Filter>Engine\03.Manager\SoundManager</Filter>
     </ClInclude>
+    <ClInclude Include="VAction.h">
+      <Filter>Engine\01.Header\MyDefaultClass</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Vnity_Project.rc">
@@ -400,6 +406,9 @@
     </ClCompile>
     <ClCompile Include="VSoundManager.cpp">
       <Filter>Engine\03.Manager\SoundManager</Filter>
+    </ClCompile>
+    <ClCompile Include="VAction.cpp">
+      <Filter>Engine\01.Header\MyDefaultClass</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

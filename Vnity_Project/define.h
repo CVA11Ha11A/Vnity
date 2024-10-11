@@ -39,7 +39,7 @@ enum class GROUP_TYPE
 	GROUND,
 	PLAYER,
 	MONSTER,
-	PROJ_PLAYER,
+	PROJ_PLAYER,	// 플레이어 가생성한 오브젝트(총알)
 	PROJ_MONSTER,
 
 

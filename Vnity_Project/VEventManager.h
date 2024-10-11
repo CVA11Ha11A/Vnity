@@ -29,5 +29,7 @@ private:
 public:
 	void AddEvent(const tEvent& _event) { m_vecEvent.push_back(_event); }
 
+	// 다음에 실행될 이벤트의 정보를 가져오는 함수(ex : 씬이동 바로 2번호출된다면 먼저실행될 이벤트를 넘겨줌)
+	tEvent FindNextEvent(E_EVENT_TYPE _findEvent);		
 };
 

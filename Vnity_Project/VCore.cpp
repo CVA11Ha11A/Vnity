@@ -84,7 +84,7 @@ int VCore::Init(HWND _hWnd, POINT _ptResolution)
 	VSound* pNewSound = VResourceManager::GetInst()->FindSound(L"BGM_01");
 	pNewSound->PlayToBGM(true);
 
-	pNewSound->SetVolume(30.f);
+	pNewSound->SetVolume(5.f);
 	pNewSound->SetPosition(20.f);
 
 	return S_OK;
@@ -141,7 +141,6 @@ void VCore::ChangeWindowSize(Vector2 _vResoulution, bool _bMenu)
 
 void VCore::Progress()
 {
-	// TODO : 아마 여기서 라이프 사이클구현하면 될거같은데? -> 08.29 엔진의 구조가 여기 같고, 라이프 사이클은 씬의 Update가 될거같은데?
 	// 그리기 
 
 	// ==============
@@ -154,6 +153,12 @@ void VCore::Progress()
 	// ==============
 	// Scene Update
 	// ==============
+	// 여기서 Awake, Start 돌면 될거같은데 각씬마다 따로 자료구조에서 쳐내야 할거같음(Object 생성자에서 자신의 생성을 알린후)
+	// 오브젝트가 씬에 등록될 경우(AddObject) 오브젝트가 Start Awake가 돈적이 있는지확인후 처리 예정 자료구조에 추가
+	// 그럼 오브젝트에 자신이 생성후 초기화 단계를 거쳤는지 확인해야겠네?
+	VSceneManager::GetInst()->Awake();
+	VSceneManager::GetInst()->Start();
+
 	VSceneManager::GetInst()->Update();
 
 	// 충돌체크
