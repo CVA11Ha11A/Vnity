@@ -7,7 +7,7 @@ https://www.youtube.com/watch?v=dlFr-OnHlWU&list=PL4SIC1d_ab-ZLg4TvAO5R4nqlJTyJX
 
 상시 업데이트예정이며 해당 프로그램으로 게임도 만들어보며 계속 업데이트 할 예정입니다.
 
-#업데이트
+# 업데이트
 <details>
   <summary><b>라이프사이클</b></summary>
   ManagerUpdate(Input, Time, Camera)
