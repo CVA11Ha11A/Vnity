@@ -23,6 +23,7 @@ VPlayer::VPlayer()
 	, m_eCurState(PLAYER_STATE::IDLE)
 	, m_ePrevState(PLAYER_STATE::IDLE)
 {
+	SetObjGroup(GROUP_TYPE::PLAYER);
 	// Texture 로딩하기
 	//m_pTex = VResourceManager::GetInst()->LoadTexture(L"PlayerTex", L"Texture\\Player.bmp");
 
@@ -73,6 +74,8 @@ void VPlayer::Awake()
 
 void VPlayer::Start()
 {
+	DonDestroy();
+
 }
 
 void VPlayer::Update()

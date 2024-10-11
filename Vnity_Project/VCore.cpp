@@ -84,7 +84,7 @@ int VCore::Init(HWND _hWnd, POINT _ptResolution)
 	VSound* pNewSound = VResourceManager::GetInst()->FindSound(L"BGM_01");
 	pNewSound->PlayToBGM(true);
 
-	pNewSound->SetVolume(30.f);
+	pNewSound->SetVolume(5.f);
 	pNewSound->SetPosition(20.f);
 
 	return S_OK;
@@ -141,7 +141,9 @@ void VCore::ChangeWindowSize(Vector2 _vResoulution, bool _bMenu)
 
 void VCore::Progress()
 {
-	// TODO : 아마 여기서 라이프 사이클구현하면 될거같은데? -> 08.29 엔진의 구조가 여기 같고, 라이프 사이클은 씬의 Update가 될거같은데?
+	// TODO : 아마 여기서 라이프 사이클구현하면 될거같은데? -> 
+	// 08.29 엔진의 구조가 여기 같고, 
+	// 라이프 사이클은 씬의 Update가 될거같은데?
 	// 그리기 
 
 	// ==============

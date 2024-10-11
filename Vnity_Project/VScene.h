@@ -13,7 +13,8 @@ class VScene
 
 
 private:
-	vector<VObject*>	m_arrObj[(UINT)GROUP_TYPE::END];	// 오브젝트 저장 및 관리할 백터를 그룹 개수만큼 선언
+	// m_arrObj[arrindex][vectorIndex]
+	vector<VObject*>	m_arrObj[(UINT)GROUP_TYPE::END];	// 오브젝트 저장 및 관리할 백터를 그룹 개수만큼 선언 
 	vector<VObject*>	m_vecDonDesObj;						// 파괴 되지 않아야하는 오브젝트를 담아둘 vector
 	wstring				m_strName;	// Scene 이름
 

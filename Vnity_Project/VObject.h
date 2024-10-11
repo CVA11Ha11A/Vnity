@@ -17,12 +17,18 @@ private:
 	Vector2		m_vPos;
 	Vector2		m_vScale;
 
+	GROUP_TYPE  m_eObjGroup;		// 오브젝트가 어떤 그룹의 속한 개체인지(상속지에서 결정될것임)
+
 	// Component
 	VCollider*	m_pCollider;
 	VAnimator*	m_pAnimator;
 	VRigidBody* m_pRigidBody;
 
 	bool		m_bAlive;		// 오브젝트 생존 여부(삭제 예정인지)
+
+private:
+	bool		m_bIsDonDestroy;	// 오브젝트 제거 가능 여부(!씬 이동시!) (Alive 여부에는 파괴 가능)
+
 
 public:
 	void SetPos(Vector2 _vPos) { this->m_vPos = _vPos; }
@@ -31,6 +37,9 @@ public:
 	Vector2 GetPos() { return this->m_vPos; }
 	Vector2 GetScale() { return this->m_vScale; }
 
+	GROUP_TYPE GetObjGroup() { return  this->m_eObjGroup; }
+	void SetObjGroup(GROUP_TYPE _group) { this->m_eObjGroup = _group; }
+
 	VCollider* GetCollider() { return this->m_pCollider; }
 	VAnimator* GetAnimator() { return this->m_pAnimator; }
 	VRigidBody* GetRigidBody() { return this->m_pRigidBody; }
@@ -38,7 +47,11 @@ public:
 	const wstring& GetName() { return this->m_strName; }
 	void SetName(const wstring& _strName) { this->m_strName = _strName; }
 
+	
 	bool IsDead() { return !m_bAlive; }	
+
+	void DonDestroy() { this->m_bIsDonDestroy = true; }
+	bool GetIsDonDestroy() { return m_bIsDonDestroy; }
 
 	void CreateCollider();
 	void CreateAnimator();

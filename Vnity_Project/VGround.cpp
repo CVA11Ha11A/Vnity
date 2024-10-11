@@ -7,6 +7,7 @@
 
 VGround::VGround()
 {
+	SetObjGroup(GROUP_TYPE::GROUND);
 	CreateCollider();
 
 }

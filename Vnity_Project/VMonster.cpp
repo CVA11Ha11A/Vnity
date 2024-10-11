@@ -6,6 +6,25 @@
 #include "VTimeManager.h"
 #include "VCollider.h"
 
+VMonster::VMonster()
+	:m_tInfo{}
+	, m_pAI(nullptr)
+{
+	SetObjGroup(GROUP_TYPE::MONSTER);
+
+	CreateCollider();
+	GetCollider()->SetScale(Vector2(45.f, 45.f));
+}
+
+VMonster::~VMonster()
+{
+	if (m_pAI != nullptr)
+	{
+		delete m_pAI;
+	}
+}
+
+
 void VMonster::Awake()
 {
 }
@@ -41,22 +60,6 @@ void VMonster::OnCollisionEnter(VCollider* _pOther)
 	}
 
 
-}
-
-VMonster::VMonster()
-	:m_tInfo{}
-	, m_pAI(nullptr)
-{
-	CreateCollider();
-	GetCollider()->SetScale(Vector2(45.f, 45.f));
-}
-
-VMonster::~VMonster()
-{
-	if (m_pAI != nullptr)
-	{
-		delete m_pAI;
-	}
 }
 
 

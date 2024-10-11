@@ -13,6 +13,8 @@ VObject::VObject()
 	, m_pAnimator(nullptr)
 	, m_pRigidBody(nullptr)
 	, m_bAlive(true)
+	, m_bIsDonDestroy(false)
+	, m_eObjGroup(GROUP_TYPE::DEFAULT)
 {
 }
 
@@ -20,6 +22,8 @@ VObject::VObject(const VObject& _origin)
 	:m_strName(_origin.m_strName)
 	, m_vPos(_origin.m_vPos)
 	, m_vScale(_origin.m_vScale)
+	, m_bIsDonDestroy(_origin.m_bIsDonDestroy)
+	, m_eObjGroup(_origin.m_eObjGroup)
 	, m_pCollider(nullptr)
 	, m_pAnimator(nullptr)
 	, m_pRigidBody(nullptr)
