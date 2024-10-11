@@ -10,8 +10,8 @@ https://www.youtube.com/watch?v=dlFr-OnHlWU&list=PL4SIC1d_ab-ZLg4TvAO5R4nqlJTyJX
 # 업데이트
 <details>
   <summary><b>라이프사이클</b></summary>
-  ManagerUpdate(Input, Time, Camera)
-현재사이클
+현재사이클<br/>
+ManagerUpdate(Input, Time, Camera)<br/>
 SceneUpdate(Objcet Awake)<br/>
 SceneUpdate(Objcet Start))<br/>
 SceneUpdate(Objcet Update))<br/>
