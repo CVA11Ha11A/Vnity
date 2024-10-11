@@ -11,13 +11,13 @@ https://www.youtube.com/watch?v=dlFr-OnHlWU&list=PL4SIC1d_ab-ZLg4TvAO5R4nqlJTyJX
   <summary><b>라이프사이클</b></summary>
   ManagerUpdate(Input, Time, Camera)
 현재사이클
-SceneUpdate(Objcet Awake)
-SceneUpdate(Objcet Start)
-SceneUpdate(Objcet Update)
-Collistion, Rigidbody
-UI
-Render
-Event(CreateObject ,Destroy, SceneChange)  
+SceneUpdate(Objcet Awake)\n
+SceneUpdate(Objcet Start)\n
+SceneUpdate(Objcet Update)\n
+Collistion, Rigidbody\n
+UI\n
+Render\n
+Event(CreateObject ,Destroy, SceneChange)\n
 </details>
 
 <details>
