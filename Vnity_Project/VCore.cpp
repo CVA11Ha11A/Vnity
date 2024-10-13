@@ -10,6 +10,7 @@
 #include "VEventManager.h"
 #include "VUIManager.h"
 #include "VSoundManager.h"
+#include "VCoroutineManager.h"
 
 //CCore* CCore::g_pInst = nullptr;
 
@@ -78,8 +79,9 @@ int VCore::Init(HWND _hWnd, POINT _ptResolution)
 	VCamera::GetInst()->Init();
 	VSoundManager::GetInst()->Init();
 	VSceneManager::GetInst()->Init();
+	VCoroutineManager::GetInst()->Init();
 
-	// Sound 로드 테스트
+	// Sound 로드 테스트 TODO : 나중에 이거 지워야함
 	VResourceManager::GetInst()->LoadSound(L"BGM_01", L"Sound\\Title.wav");
 	VSound* pNewSound = VResourceManager::GetInst()->FindSound(L"BGM_01");
 	pNewSound->PlayToBGM(true);
@@ -141,8 +143,7 @@ void VCore::ChangeWindowSize(Vector2 _vResoulution, bool _bMenu)
 
 void VCore::Progress()
 {
-	// 그리기 
-
+	
 	// ==============
 	// Manager Update
 	// ==============
@@ -160,6 +161,10 @@ void VCore::Progress()
 	VSceneManager::GetInst()->Start();
 
 	VSceneManager::GetInst()->Update();
+
+	// 코루틴 처리
+	VCoroutineManager::GetInst()->UpdateWaitForOneFrame();
+	VCoroutineManager::GetInst()->UpdateWaitForSecond();
 
 	// 충돌체크
 	VCollisionManager::GetInst()->Update();

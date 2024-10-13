@@ -74,6 +74,18 @@ public:		// Collision
 	virtual void OnCollisionEnter(VCollider* _pOther) {}		// 충돌 진입시
 	virtual void OnCollisionExit(VCollider* _pOther) {}		// 충돌 탈출시
 
+public:	// Coroutine
+	void StartCoroutine(void (VObject::*func)(void));
+	void StartCoroutine(void (VObject::*func)(float), float _fParam);
+
+	/*template<typename T>
+	void StartCoroutine(void(T::* func)(void))
+	{
+		VCoroutineManager::GetInst()->SetOwnerCache(this);
+		VCoroutineManager::GetInst()->SetVoidFuncPointer(func);
+		(this->*func)();
+	}*/
+
 
 private:
 	void SetDead() { m_bAlive = false; }

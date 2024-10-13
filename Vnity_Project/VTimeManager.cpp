@@ -37,10 +37,10 @@ void VTimeManager::Update()
 	m_PrevCount = m_CurCount;
 
 #ifdef _DEBUG
-	if (m_DeltaTime > (1.f / 60.f))
+	/*if (m_DeltaTime > (1.f / 60.f))
 	{
 		m_DeltaTime = (1.f / 60.f);
-	}
+	}*/
 #endif
 	
 }
