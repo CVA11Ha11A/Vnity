@@ -79,14 +79,6 @@ public:	// Coroutine
 	void StartCoroutine(void (VObject::*func)(void));
 	void StartCoroutine(void (VObject::*func)(float), float _fParam);
 
-	template<typename T>
-	void StartCoroutine(void(T::*func)(void))
-	{
-		VCoroutineManager::GetInst()->SetOwnerCache(this);
-		VCoroutineManager::GetInst()->SetVoidFuncPointer(func);
-		T* callObjPointer = dynamic_cast<T*>(this);
-		(callObjPointer->*func)();
-	}
 
 
 private:

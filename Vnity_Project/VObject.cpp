@@ -6,6 +6,7 @@
 #include "VAnimator.h"
 #include "VRigidbody.h"
 
+
 VObject::VObject()
 	:m_vPos{}
 	, m_vScale{}
@@ -146,15 +147,17 @@ void VObject::CreateRigidBody()
 
 template<class T>
 void StartCoroutine(void(T::*func)(void))
-{
-	VCoroutineManager::GetInst()->SetOwnerCache(this);
-	VCoroutineManager::GetInst()->SetVoidFuncPointer(func);
-	(this->*func)();
+{		
+
+	//VCoroutineManager::GetInst()->SetOwnerCache(this);
+	//VCoroutineManager::GetInst()->SetVoidFuncPointer(func);
+	//(this->*func)();
+
 }
 
 void VObject::StartCoroutine(void(VObject::*func)(float), float _fParam)
 {
-	VCoroutineManager::GetInst()->SetOwnerCache(this);
-	VCoroutineManager::GetInst()->SetFloatFuncPointer(func, _fParam);
-	(this->*func)(_fParam);
+	//VCoroutineManager::GetInst()->SetOwnerCache(this);
+	//VCoroutineManager::GetInst()->SetFloatFuncPointer(func, _fParam);
+	//(this->*func)(_fParam);
 }

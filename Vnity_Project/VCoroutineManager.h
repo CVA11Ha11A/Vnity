@@ -4,6 +4,7 @@ class VObject;
 class VCoroutine;
 
 
+
 class VCoroutineManager
 {
 	SINGLETON(VCoroutineManager);
@@ -15,30 +16,20 @@ private:
 
 
 private:	// CoroutineData 캐시
-	VObject* ownerCache;		// 코루틴 실행 요청 객체 캐시	
-	void (VObject::*vCFunc)(void);		// void Cache Function
-	void (VObject::*fCFunc)(float);		// float Cache Function
-	float m_fCacheParam;		// 임시 인자 저장변수
+	// 코루틴 임시 주석
+	//VObject* ownerCache;		// 코루틴 실행 요청 객체 캐시	
+	//void (VObject::*vCFunc)(void);		// void Cache Function
+	//void (VObject::*fCFunc)(float);		// float Cache Function
+	//float m_fCacheParam;		// 임시 인자 저장변수
 
 public:	// Get
 	vector<VCoroutine*>& GetWaitForSecondVector()	{ return m_vWaitForSecond; }
-	vector<VCoroutine*>& GetWaitForOneFrameVector() { return m_vWaitForOneFrame; }
-
-	void (VObject::*GetVoidFunction() const)(void) { return vCFunc; }
-	void (VObject::*GetFloatFunction() const)(float) { return fCFunc; }
-	float GetCacheParam() { return m_fCacheParam; }
-	VObject* GetOwnerCache() { return ownerCache; }
+	vector<VCoroutine*>& GetWaitForOneFrameVector() { return m_vWaitForOneFrame; }	
 
 	
 public:	// Set
-	void SetOwnerCache(VObject* _owner) { ownerCache = _owner; }
-	template<typename T>
-	void SetVoidFuncPointer(void(T::*vf)(void)) { vCFunc = vf; }
-	template<typename T>
-	void SetFloatFuncPointer(void(T::*ff)(float), float _f) { fCFunc = ff; m_fCacheParam = _f; }
-	void ClearCache();
 
-	
+
 
 public: // Update
 	void UpdateWaitForOneFrame();

@@ -3,11 +3,11 @@
 
 #include "VCoroutine.h"
 
-VCoroutineManager::VCoroutineManager()
-	:ownerCache(nullptr)
-	,vCFunc(nullptr)
-	,fCFunc(nullptr)
-	,m_fCacheParam(0.f)
+VCoroutineManager::VCoroutineManager()	
+	//:ownerCache(nullptr)
+	//,vCFunc(nullptr)
+	//,fCFunc(nullptr)
+	//,m_fCacheParam(0.f)
 {
 	m_vWaitForSecond.resize(20);
 	m_vWaitForOneFrame.resize(20);
@@ -20,13 +20,13 @@ void VCoroutineManager::Init()
 {
 }
 
-void VCoroutineManager::ClearCache()
-{
-	ownerCache = nullptr;
-	vCFunc = nullptr;
-	fCFunc = nullptr;
-	m_fCacheParam = 0.f;
-}
+//void VCoroutineManager::ClearCache()
+//{
+//	ownerCache = nullptr;
+//	vCFunc = nullptr;
+//	fCFunc = nullptr;
+//	m_fCacheParam = 0.f;
+//}
 
 void VCoroutineManager::UpdateWaitForOneFrame()
 {
