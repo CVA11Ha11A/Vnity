@@ -6,8 +6,6 @@
 #include "VAnimator.h"
 #include "VRigidbody.h"
 
-#include "VCoroutineManager.h"
-
 VObject::VObject()
 	:m_vPos{}
 	, m_vScale{}
@@ -146,8 +144,8 @@ void VObject::CreateRigidBody()
 	m_pRigidBody->m_pOwner = this;
 }
 
-
-void VObject::StartCoroutine(void(VObject::*func)(void))
+template<class T>
+void StartCoroutine(void(T::*func)(void))
 {
 	VCoroutineManager::GetInst()->SetOwnerCache(this);
 	VCoroutineManager::GetInst()->SetVoidFuncPointer(func);

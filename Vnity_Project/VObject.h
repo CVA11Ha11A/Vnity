@@ -1,6 +1,7 @@
 #pragma once
 #include "VGlobal.h"
 
+#include "VCoroutineManager.h"
 #include "VCamera.h"
 
 class VCollider;
@@ -74,17 +75,18 @@ public:		// Collision
 	virtual void OnCollisionEnter(VCollider* _pOther) {}		// 충돌 진입시
 	virtual void OnCollisionExit(VCollider* _pOther) {}		// 충돌 탈출시
 
-public:	// Coroutine
+public:	// Coroutine	
 	void StartCoroutine(void (VObject::*func)(void));
 	void StartCoroutine(void (VObject::*func)(float), float _fParam);
 
-	/*template<typename T>
-	void StartCoroutine(void(T::* func)(void))
+	template<typename T>
+	void StartCoroutine(void(T::*func)(void))
 	{
 		VCoroutineManager::GetInst()->SetOwnerCache(this);
 		VCoroutineManager::GetInst()->SetVoidFuncPointer(func);
-		(this->*func)();
-	}*/
+		T* callObjPointer = dynamic_cast<T*>(this);
+		(callObjPointer->*func)();
+	}
 
 
 private:

@@ -15,7 +15,7 @@ private:
 
 
 private:	// CoroutineData 캐시
-	VObject* ownerCache;		// 코루틴 실행 요청 객체 캐시
+	VObject* ownerCache;		// 코루틴 실행 요청 객체 캐시	
 	void (VObject::*vCFunc)(void);		// void Cache Function
 	void (VObject::*fCFunc)(float);		// float Cache Function
 	float m_fCacheParam;		// 임시 인자 저장변수
@@ -29,11 +29,13 @@ public:	// Get
 	float GetCacheParam() { return m_fCacheParam; }
 	VObject* GetOwnerCache() { return ownerCache; }
 
-
+	
 public:	// Set
 	void SetOwnerCache(VObject* _owner) { ownerCache = _owner; }
-	void SetVoidFuncPointer(void(VObject::*vf)(void)) { vCFunc = vf; }
-	void SetFloatFuncPointer(void(VObject::*ff)(float), float _f) { fCFunc = ff; m_fCacheParam = _f; }
+	template<typename T>
+	void SetVoidFuncPointer(void(T::*vf)(void)) { vCFunc = vf; }
+	template<typename T>
+	void SetFloatFuncPointer(void(T::*ff)(float), float _f) { fCFunc = ff; m_fCacheParam = _f; }
 	void ClearCache();
 
 	
