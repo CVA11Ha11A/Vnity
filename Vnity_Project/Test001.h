@@ -11,7 +11,7 @@ public:
 	virtual void Awake();
 	virtual void Start();
 	virtual void Update();
-	virtual void Render();
+	virtual void Render(HDC _dc);
 
 private:
 

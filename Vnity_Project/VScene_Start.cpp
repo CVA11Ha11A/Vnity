@@ -123,6 +123,7 @@ void VScene_Start::Render(HDC _dc)
 void VScene_Start::SceneEnter()
 {
 	VObject* test = new Test001();
+	AddObject(test, GROUP_TYPE::DEFAULT);
 
 
 	// Object√ﬂ∞° Player

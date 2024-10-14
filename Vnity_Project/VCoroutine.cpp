@@ -6,17 +6,19 @@
 
 VCoroutine::VCoroutine()
 	:m_fWaitTime(0.f)
-	,m_fParam(0.f)
-	,m_eType(CoroutineType::Default)
-	,ffunc(nullptr)
-	,vfunc(nullptr)
-{	
+	, m_fParam(0.f)
+	, m_eType(CoroutineType::Default)
+	, routineOwner(nullptr)
+	, ffunc(nullptr)
+	, vfunc(nullptr)
+{
 	Init();
 }
-VCoroutine::VCoroutine(float _param)
-	:m_fWaitTime(_param)
-	,m_fParam(0.f)
-	,m_eType(CoroutineType::Default)
+VCoroutine::VCoroutine(float _waitTime)
+	:m_fWaitTime(_waitTime)
+	, m_fParam(0.f)
+	, m_eType(CoroutineType::Default)
+	, routineOwner(nullptr)
 	, ffunc(nullptr)
 	, vfunc(nullptr)
 {
@@ -25,14 +27,40 @@ VCoroutine::VCoroutine(float _param)
 
 VCoroutine::~VCoroutine()
 {
-	
+
 }
 
-void VCoroutine::Execute() { /* 순수 가상함수 */ }
 
 void VCoroutine::Init()
 {	// 객체의 필수 요소 초기화 하는 함수
-	
+	tCouroutineDatas& cacheData = VCoroutineManager::GetInst()->GetCouroutineCache();
+	bool fSwitch = VCoroutineManager::GetInst()->GetFSwitch();
+	bool vSwitch = VCoroutineManager::GetInst()->GetVSwitch();
+
+#pragma region LEGACY(캐시 포인터 체크)
+	//if (cacheData.vFuncCache != nullptr)
+	//{
+	//	vfunc = cacheData.vFuncCache;
+	//}
+	//else if (cacheData.fFuncCache != nullptr)
+	//{
+	//	ffunc = cacheData.fFuncCache;
+	//	m_fParam = cacheData.fCacheParam;
+	//}
+#pragma endregion LEGACY(캐시 포인터 체크)
+	if (vSwitch == true)
+	{
+		vfunc = cacheData.vFuncCache;
+	}
+	else if (fSwitch == true)
+	{
+		ffunc = cacheData.fFuncCache;
+		m_fParam = cacheData.fCacheParam;
+	}
+
+	routineOwner = cacheData.ownerCache;
+
+	VCoroutineManager::GetInst()->ClearCacheData();
 
 }		// Init()
 
@@ -41,12 +69,11 @@ void VCoroutine::CallFunction()
 {
 	if (ffunc != nullptr)
 	{
-		
-		(funcOwner->*ffunc)(m_fParam);
+		ffunc(m_fParam);
 	}
 	else if (vfunc != nullptr)
 	{
-		(funcOwner->*vfunc)();
+		vfunc();
 	}
 
 }		// CallFunction()

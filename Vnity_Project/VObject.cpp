@@ -145,19 +145,3 @@ void VObject::CreateRigidBody()
 	m_pRigidBody->m_pOwner = this;
 }
 
-template<class T>
-void StartCoroutine(void(T::*func)(void))
-{		
-
-	//VCoroutineManager::GetInst()->SetOwnerCache(this);
-	//VCoroutineManager::GetInst()->SetVoidFuncPointer(func);
-	//(this->*func)();
-
-}
-
-void VObject::StartCoroutine(void(VObject::*func)(float), float _fParam)
-{
-	//VCoroutineManager::GetInst()->SetOwnerCache(this);
-	//VCoroutineManager::GetInst()->SetFloatFuncPointer(func, _fParam);
-	//(this->*func)(_fParam);
-}

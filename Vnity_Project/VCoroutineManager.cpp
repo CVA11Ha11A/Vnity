@@ -4,13 +4,10 @@
 #include "VCoroutine.h"
 
 VCoroutineManager::VCoroutineManager()	
-	//:ownerCache(nullptr)
-	//,vCFunc(nullptr)
-	//,fCFunc(nullptr)
-	//,m_fCacheParam(0.f)
-{
-	m_vWaitForSecond.resize(20);
-	m_vWaitForOneFrame.resize(20);
+	:isFSwitch(false)
+	,isVSwitch(false)
+	,m_tCache{}
+{	
 }
 VCoroutineManager::~VCoroutineManager()
 {
@@ -20,13 +17,11 @@ void VCoroutineManager::Init()
 {
 }
 
-//void VCoroutineManager::ClearCache()
-//{
-//	ownerCache = nullptr;
-//	vCFunc = nullptr;
-//	fCFunc = nullptr;
-//	m_fCacheParam = 0.f;
-//}
+
+void VCoroutineManager::ClearGarbage()
+{
+	Safe_Delete_Vec<VCoroutine*>(m_vGarbageRoutines);
+}
 
 void VCoroutineManager::UpdateWaitForOneFrame()
 {
@@ -37,10 +32,20 @@ void VCoroutineManager::UpdateWaitForOneFrame()
 }		// UpdateWaitForOneFrame()
 
 void VCoroutineManager::UpdateWaitForSecond()
-{
-	for (size_t i = 0; i < m_vWaitForSecond.size(); ++i)
+{	
+
+	for (size_t i = 0; i < m_vWaitForSecond.size(); i++)
 	{
-		m_vWaitForSecond[i]->Execute();
+		if (m_vWaitForSecond[i] != nullptr)
+		{
+			if (m_vWaitForSecond[i]->Execute() == true)
+			{
+				int deleteIndex = i--;
+				m_vWaitForSecond.erase(m_vWaitForSecond.begin() + deleteIndex);
+				
+			}
+		}
+												
 	}
 
 }		// UpdateWaitForSecond()

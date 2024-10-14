@@ -20,12 +20,18 @@ VWaitForSecond::~VWaitForSecond()
 }
 
 
-void VWaitForSecond::Execute()
+bool VWaitForSecond::Execute()
 {	
 	m_fDurationTime += DeltaTime;
 
 	if (m_fWaitTime <= m_fDurationTime)
 	{
 		CallFunction();
+		VCoroutineManager::GetInst()->AddGarbageRoutine(this);
+		return true;
 	}
+
+	return false;
+	
+
 }		// Execute()

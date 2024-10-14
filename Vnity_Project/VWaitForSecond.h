@@ -11,13 +11,15 @@ private:
 
 
 public:
-	virtual void Execute();
+	virtual bool Execute();
 
 
 
 public:	
 	VWaitForSecond(float _duration);
 	~VWaitForSecond();
+
+private:	
 
 };
 
