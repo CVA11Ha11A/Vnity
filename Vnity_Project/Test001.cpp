@@ -44,11 +44,11 @@ void Test001::CoroutineTest()
 	{
 	case 1:
 	{
-		Vector2 pos = Vector2(GetPos().x + (100 * DeltaTime), GetPos().y);
+		Vector2 pos = Vector2(GetPos().x + (1000 * DeltaTime), GetPos().y);
 		SetPos(pos);
-		CallCount++;
-		new VWaitForSecond(1.f);
-		if (CallCount > 15) { routineBrance++; }
+		CallCount += 1;
+		new VWaitForSecond(0.1f);
+		if (CallCount > 15) { routineBrance += 1; }
 
 	}
 	break;

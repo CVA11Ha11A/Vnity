@@ -193,6 +193,7 @@ void VCore::Progress()
 	// ==============
 	// 이벤트 지연처리
 	// ==============	
+	VCoroutineManager::GetInst()->UpdateRoutineSetting();		// 코루틴 셋팅
 	VEventManager::GetInst()->Update();
 
 }		// Progress()

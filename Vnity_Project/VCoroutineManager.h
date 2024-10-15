@@ -17,8 +17,9 @@ class VCoroutineManager
 
 private:
 	// 어떤것을 담아야할까 (코루틴의 호출 주기가 완료되었는지 체크할 객체)
-	vector<VCoroutine*> m_vWaitForSecond;	// 실행예정인 WaitForSecond
-	vector<VCoroutine*> m_vWaitForOneFrame;	// 실행예정인 WaitForOneFrame
+	list<VCoroutine*> m_lWaitForSecond;	// 실행예정인 WaitForSecond
+	list<VCoroutine*> m_lWaitForOneFrame;	// 실행예정인 WaitForOneFrame
+	vector<VCoroutine*> m_vAddRouitnes;	// 코루틴실행 타이밍이 아닐경우 이벤트처럼 모아두었다가 한번에 재추가(즉시추가시 실행 반복문에서 중복 실행가능성 존재)
 	vector<VCoroutine*>	m_vGarbageRoutines;	// 한번 사용된 대기 Class들을 모여두고 한번에 처리할 vector
 
 	tCouroutineDatas m_tCache;	// 잠시 기억해둘 캐시 데이터
@@ -29,8 +30,9 @@ private:
 
 
 public:	// Get
-	vector<VCoroutine*>& GetWaitForSecondVector() { return m_vWaitForSecond; }
-	vector<VCoroutine*>& GetWaitForOneFrameVector() { return m_vWaitForOneFrame; }
+	list<VCoroutine*>& GetWaitForSecondVector() { return m_lWaitForSecond; }
+	list<VCoroutine*>& GetWaitForOneFrameVector() { return m_lWaitForOneFrame; }
+	
 	tCouroutineDatas& GetCouroutineCache() { return m_tCache; }
 	bool GetFSwitch() { return isFSwitch; }
 	bool GetVSwitch() { return isVSwitch; }
@@ -47,6 +49,7 @@ public:	// Set
 		m_tCache.fCacheParam = _fParam;
 		m_tCache.ownerCache = _pOwner;
 	}
+	void SetCouroutineCache(VCoroutine* _routine);
 	void OnVSwitch()
 	{
 		if (isFSwitch == true)
@@ -79,6 +82,8 @@ public:
 public: // Update
 	void UpdateWaitForOneFrame();
 	void UpdateWaitForSecond();
+
+	void UpdateRoutineSetting();		// 
 
 public:
 	void Init();
