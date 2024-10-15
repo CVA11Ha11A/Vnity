@@ -35,8 +35,8 @@ Event(CreateObject ,Destroy, SceneChange))<br/>
 <details>
   <summary>Coroutine</summary>
   1. VObject를 상속받은 객체가 사용가능<br/>
-  <br/><br/>
 &nbsp;&nbsp;a. 호출방식 StartCoroutin<현재 객체>(함수, this(객체의 포인터))<br/>
+  <br/><br/>
   2. return 방식<br/>
 &nbsp;&nbsp;a. (Unity) yield return new WaitForSecond(float _f) -> (Vnity) new WaitForSecond(float _f)<br/>
 &nbsp;&nbsp;b. 유니티처럼 함수 탈출지점부터 시작하지않음 초기부터 시작하기에 switch, if 분기점으로 나누어주어야함<br/>
