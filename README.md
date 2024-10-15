@@ -26,21 +26,21 @@ Event(CreateObject ,Destroy, SceneChange))<br/>
 
 <details>
   <summary>Object</summary>
-  1. DonDestroy 추가
-    a. 씬이동시 파괴 안되도록 제작
-    b. 내부 DieEvent로는 오브젝트가 파괴
+  1. DonDestroy 추가<br/>
+    a. 씬이동시 파괴 안되도록 제작<br/>
+    b. 내부 DieEvent로는 오브젝트가 파괴<br/>
 </details>
 
 <details>
   <summary>Coroutine</summary>
-  1. VObject를 상속받은 객체가 사용가능
-    a. 호출방식 StartCoroutin<현재 객체>(함수, this(객체의 포인터))
-  2. return 방식
-    a. (Unity) yield return new WaitForSecond(float _f) -> (Vnity) new WaitForSecond(float _f)
-    b. 유니티처럼 함수 탈출지점부터 시작하지않음 초기부터 시작하기에 switch, if 분기점으로 나누어주어야함
-  3. 관리방식
-    a. 엔진 내부에서 코루틴을 관리해주도록 제작
-    b. new 한 WaitForSecond, WaitForOneFrame 같은것은 CoroutineManager에서 자동적으로 관리해주기때문에 신경쓰지 않아도되도록 제작
+  1. VObject를 상속받은 객체가 사용가능<br/>
+    a. 호출방식 StartCoroutin<현재 객체>(함수, this(객체의 포인터))<br/>
+  2. return 방식<br/>
+    a. (Unity) yield return new WaitForSecond(float _f) -> (Vnity) new WaitForSecond(float _f)<br/>
+    b. 유니티처럼 함수 탈출지점부터 시작하지않음 초기부터 시작하기에 switch, if 분기점으로 나누어주어야함<br/>
+  3. 관리방식<br/>
+    a. 엔진 내부에서 코루틴을 관리해주도록 제작<br/>
+    b. new 한 WaitForSecond, WaitForOneFrame 같은것은 CoroutineManager에서 자동적으로 관리해주기때문에 신경쓰지 않아도되도록 제작<br/>
     
 </details>
 
