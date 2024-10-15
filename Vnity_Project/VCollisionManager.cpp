@@ -10,6 +10,7 @@
 
 
 VCollisionManager::VCollisionManager()
+	:m_arrCheck{}
 {
 
 }

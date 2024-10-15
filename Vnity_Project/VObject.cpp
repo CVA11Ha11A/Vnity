@@ -6,6 +6,7 @@
 #include "VAnimator.h"
 #include "VRigidbody.h"
 
+
 VObject::VObject()
 	:m_vPos{}
 	, m_vScale{}
@@ -15,7 +16,7 @@ VObject::VObject()
 	, m_bAlive(true)
 	, m_bIsDonDestroy(false)
 	, m_eObjGroup(GROUP_TYPE::DEFAULT)
-	, m_tInit{m_tInit.isAwake = false, m_tInit.isStart = false }
+	, m_tInit{ m_tInit.isAwake = false, m_tInit.isStart = false }
 {
 }
 
@@ -46,7 +47,7 @@ VObject::VObject(const VObject& _origin)
 		m_pRigidBody = new VRigidBody(*_origin.m_pRigidBody);
 		m_pRigidBody->m_pOwner = this;
 	}
-	
+
 }
 
 
@@ -77,7 +78,7 @@ void VObject::Update()
 }
 
 void VObject::FinalUpdate()
-{	
+{
 	if (m_pAnimator != nullptr)
 	{
 		m_pAnimator->FinalUpdate();
@@ -133,7 +134,7 @@ void VObject::CreateCollider()
 }
 
 void VObject::CreateAnimator()
-{	
+{
 	m_pAnimator = new VAnimator();
 	m_pAnimator->m_pOwner = this;
 }
@@ -143,3 +144,4 @@ void VObject::CreateRigidBody()
 	m_pRigidBody = new VRigidBody();
 	m_pRigidBody->m_pOwner = this;
 }
+

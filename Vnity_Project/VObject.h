@@ -1,6 +1,9 @@
 #pragma once
 #include "VGlobal.h"
 
+#include "VCoroutineManager.h"
+#include "VWaitForSecond.h"
+
 #include "VCamera.h"
 
 class VCollider;
@@ -26,8 +29,8 @@ private:
 	GROUP_TYPE  m_eObjGroup;		// 오브젝트가 어떤 그룹의 속한 개체인지(상속지에서 결정될것임)
 
 	// Component
-	VCollider*	m_pCollider;
-	VAnimator*	m_pAnimator;
+	VCollider* m_pCollider;
+	VAnimator* m_pAnimator;
 	VRigidBody* m_pRigidBody;
 
 	bool		m_bAlive;		// 오브젝트 생존 여부(삭제 예정인지)
@@ -58,8 +61,8 @@ public:		// Get
 public:		// Set
 	void SetPos(Vector2 _vPos) { this->m_vPos = _vPos; }
 	void SetScale(Vector2 _vScale) { this->m_vScale = _vScale; }
-	void SetObjGroup(GROUP_TYPE _group) { this->m_eObjGroup = _group; }		
-	void SetName(const wstring& _strName) { this->m_strName = _strName; }		
+	void SetObjGroup(GROUP_TYPE _group) { this->m_eObjGroup = _group; }
+	void SetName(const wstring& _strName) { this->m_strName = _strName; }
 	void DonDestroy() { this->m_bIsDonDestroy = true; }
 
 
@@ -74,6 +77,25 @@ public:		// Collision
 	virtual void OnCollisionEnter(VCollider* _pOther) {}		// 충돌 진입시
 	virtual void OnCollisionExit(VCollider* _pOther) {}		// 충돌 탈출시
 
+public:	// Coroutine	
+	template <typename T>
+	void StartCoroutine(function<void(T&)> _fp, T* _objectPointer)
+	{
+		function<void()> func = std::bind(_fp, std::ref(*_objectPointer));
+		VCoroutineManager::GetInst()->SetCouroutineCache(func, _objectPointer);
+		VCoroutineManager::GetInst()->OnVSwitch();		// void 가져가야한다고 Switch On
+		func();	// 함수 호출 (WairFor 만나면 캐시에서 데이터를 가져가 VCoroutine객체가 생성후 Manager에 추가)
+	}
+	template <typename T>
+	void StartCoroutine(function<void(T&, float)> _fp,float _fParam, T* _objectPointer)
+	{
+		function<void()> func = std::bind(_fp, std::ref(*_objectPointer));
+		VCoroutineManager::GetInst()->SetCouroutineCache(func, _fParam, _objectPointer);
+		VCoroutineManager::GetInst()->OnFSwitch();		// float가져가야한다고 Switch On
+		func();	// 함수 호출 (WairFor 만나면 캐시에서 데이터를 가져가 VCoroutine객체가 생성후 Manager에 추가)
+	}
+
+	
 
 private:
 	void SetDead() { m_bAlive = false; }
@@ -96,6 +118,6 @@ public:
 	virtual ~VObject();
 
 
-	
+
 };
 

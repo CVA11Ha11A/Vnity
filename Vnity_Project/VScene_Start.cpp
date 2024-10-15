@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "VScene_Start.h"
 
+#include "Test001.h"
 
 #include "VPlayer.h"
 #include "VMonster.h"
@@ -121,6 +122,8 @@ void VScene_Start::Render(HDC _dc)
 
 void VScene_Start::SceneEnter()
 {
+	VObject* test = new Test001();
+	AddObject(test, GROUP_TYPE::DEFAULT);
 
 
 	// Object√ﬂ∞° Player

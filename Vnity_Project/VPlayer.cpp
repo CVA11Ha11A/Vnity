@@ -75,8 +75,7 @@ void VPlayer::Awake()
 
 void VPlayer::Start()
 {
-	DonDestroy();
-
+	DonDestroy();	
 }
 
 void VPlayer::Update()
