@@ -27,7 +27,7 @@ Event(CreateObject ,Destroy, SceneChange))<br/>
 <details>
   <summary>Object</summary>
   1. DonDestroy 추가<br/>
-    a. 씬이동시 파괴 안되도록 제작<br/>
+  &nbsp;a. 씬이동시 파괴 안되도록 제작<br/>
     b. 내부 DieEvent로는 오브젝트가 파괴<br/>
 </details>
 
