@@ -34,6 +34,7 @@ public:	// Get
 	list<VCoroutine*>& GetWaitForOneFrameVector() { return m_lWaitForOneFrame; }
 	
 	tCouroutineDatas& GetCouroutineCache() { return m_tCache; }
+
 	bool GetFSwitch() { return isFSwitch; }
 	bool GetVSwitch() { return isVSwitch; }
 
@@ -67,7 +68,7 @@ public:	// Set
 		isFSwitch = true;
 	}
 
-public:
+public:		// Clear
 	void ClearCacheData()
 	{
 		m_tCache.fCacheParam = 0.f;
@@ -76,17 +77,24 @@ public:
 		m_tCache.ownerCache = nullptr;
 	}
 	void ClearGarbage();
+	void ClearRouitnes();	// 모든 루틴이 클리어되어야하는 순간에 호출(씬이동)
 
-	void AddGarbageRoutine(VCoroutine* _garbage) { m_vGarbageRoutines.push_back(_garbage); }
 
 public: // Update
 	void UpdateWaitForOneFrame();
 	void UpdateWaitForSecond();
 
-	void UpdateRoutineSetting();		// 
+	void UpdateRoutineSetting();
 
 public:
 	void Init();
-	void AddCoroutine(VCoroutine* _routine);		// 코루틴(Class)이 생성될경우 호출될 함수
+
+	void AddCoroutine(VCoroutine* _routine);		// 코루틴을 추가 예정해주는 함수(WaitFor에서 호출)
+	void AddGarbageRoutine(VCoroutine* _garbage) { m_vGarbageRoutines.push_back(_garbage); }
+	VCoroutine* FindCoroutine(const VObject* _owner);
+	void CoroutineReSetting();		// 씬이동시 루틴들이 재설정되어야하는데
+	
+private:
+	void BranchCoroutine(VCoroutine* _routine);		// 코루틴(Class)이 각자 맞는 자료구조에 들어가도록하는 함수
 };
 

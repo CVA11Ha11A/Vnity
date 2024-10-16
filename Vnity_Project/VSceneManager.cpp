@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "VSceneManager.h"
 
+#include "VCoroutineManager.h"
 
 #include "VScene_Start.h"
 #include "VScene_Tool.h"
@@ -67,6 +68,9 @@ void VSceneManager::Render(HDC _dc)
 
 void VSceneManager::ChangeScene(E_SCENE_TYPE _eNext)
 {	
+
+	VCoroutineManager::GetInst()->CoroutineReSetting();
+
 	m_pCurScene->SceneExit();
 
 	m_pCurScene = m_arrScene[(UINT)_eNext];

@@ -30,7 +30,7 @@ VUI::VUI(const VUI& _origin)
 
 VUI::~VUI()
 {
-	Safe_Delete_Vec(m_vecChildUI);
+	Safe_Delete_Vec<VUI*>(m_vecChildUI);
 }
 
 

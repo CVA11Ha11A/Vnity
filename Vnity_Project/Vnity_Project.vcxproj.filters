@@ -140,6 +140,21 @@
     <Filter Include="Engine\01.Header\MyDefaultClass">
       <UniqueIdentifier>{c18dc2ea-b33a-4215-8612-4468a2f6f584}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\01.Header\MyDefaultClass\Coroutine">
+      <UniqueIdentifier>{0563bfda-4bc4-465a-aba0-bb66e7a6f43c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\01.Header\MyDefaultClass\Coroutine\Base">
+      <UniqueIdentifier>{2aa8db97-11d0-4ffc-9cb8-c4798af25169}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\01.Header\MyDefaultClass\Coroutine\WaitFor">
+      <UniqueIdentifier>{3c717405-707a-450c-a2ed-55ccf08047b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Manager\CoroutineManager">
+      <UniqueIdentifier>{2ac25054-8ff3-4af4-a289-f4e188c9ec90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\01.Header\MyDefaultClass\Test">
+      <UniqueIdentifier>{4b377d53-e144-43a8-bc16-17618ec9ecf7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="VCore.h">
@@ -278,6 +293,21 @@
     <ClInclude Include="VAction.h">
       <Filter>Engine\01.Header\MyDefaultClass</Filter>
     </ClInclude>
+    <ClInclude Include="VCoroutine.h">
+      <Filter>Engine\01.Header\MyDefaultClass\Coroutine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="VWaitForSecond.h">
+      <Filter>Engine\01.Header\MyDefaultClass\Coroutine\WaitFor</Filter>
+    </ClInclude>
+    <ClInclude Include="VWaitForOneFrame.h">
+      <Filter>Engine\01.Header\MyDefaultClass\Coroutine\WaitFor</Filter>
+    </ClInclude>
+    <ClInclude Include="VCoroutineManager.h">
+      <Filter>Engine\03.Manager\CoroutineManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Test001.h">
+      <Filter>Engine\01.Header\MyDefaultClass\Test</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Vnity_Project.rc">
@@ -409,6 +439,21 @@
     </ClCompile>
     <ClCompile Include="VAction.cpp">
       <Filter>Engine\01.Header\MyDefaultClass</Filter>
+    </ClCompile>
+    <ClCompile Include="VCoroutine.cpp">
+      <Filter>Engine\01.Header\MyDefaultClass\Coroutine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="VWaitForOneFrame.cpp">
+      <Filter>Engine\01.Header\MyDefaultClass\Coroutine\WaitFor</Filter>
+    </ClCompile>
+    <ClCompile Include="VWaitForSecond.cpp">
+      <Filter>Engine\01.Header\MyDefaultClass\Coroutine\WaitFor</Filter>
+    </ClCompile>
+    <ClCompile Include="VCoroutineManager.cpp">
+      <Filter>Engine\03.Manager\CoroutineManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Test001.cpp">
+      <Filter>Engine\01.Header\MyDefaultClass\Test</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
