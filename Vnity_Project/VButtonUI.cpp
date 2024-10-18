@@ -8,11 +8,14 @@ VButtonUI::VButtonUI()
 	,m_pFunc(nullptr)
 	,m_pSceneFunc(nullptr)
 	,m_pSceneInst(nullptr)
+	,m_param1{}
+	,m_param2{}
 {
 }
 
 VButtonUI::~VButtonUI()
 {
+
 }
 
 

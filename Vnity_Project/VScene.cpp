@@ -50,7 +50,7 @@ void VScene::AddObject(VObject* _pObj, GROUP_TYPE _eType)
 	{
 		m_vStartObjList.push_back(_pObj);
 	}
-		
+
 }		// AddObject()
 
 
@@ -114,7 +114,7 @@ void VScene::Start()
 			assert(nullptr);
 			continue;
 		}
-		m_vStartObjList[i]->Start();		
+		m_vStartObjList[i]->Start();
 		tObjInit& init = m_vStartObjList[i]->GetObjInitRef();
 		init.isStart = true;
 	}
@@ -234,6 +234,15 @@ void VScene::DeleteGroup(GROUP_TYPE _eTarget)
 	// Safe_Delete_Vec<VObject*>(m_arrObj[(UINT)_eTarget]);
 #pragma endregion
 
+
+#if _DEBUG
+	if (_eTarget == GROUP_TYPE::UI)
+	{
+ 		int i = 1;
+	}
+
+#endif
+
 #pragma region 씬이동시 설정한 오브젝트 제거 방지
 	vector<VObject*>& targetVector = m_arrObj[(UINT)_eTarget];
 	tEvent nextScene = VEventManager::GetInst()->FindNextEvent(E_EVENT_TYPE::SCENE_CHANGE);
@@ -244,6 +253,7 @@ void VScene::DeleteGroup(GROUP_TYPE _eTarget)
 			&& targetVector[i]->GetIsDonDestroy() == false)
 		{
 			delete targetVector[i];
+			targetVector[i] = nullptr;
 		}
 		else if (targetVector[i] != nullptr
 			&& targetVector[i]->GetIsDonDestroy() == true)
@@ -252,8 +262,11 @@ void VScene::DeleteGroup(GROUP_TYPE _eTarget)
 			// 자신이 가지고 있던 지우면 안되는 오브젝트를 다음씬에 넘긴후 현재의 인덱스를 nullptr로 할당			
 			VSceneManager::GetInst()->GetScene((E_SCENE_TYPE)nextScene.lParam)
 				->AddObject(targetVector[i], targetVector[i]->GetObjGroup());
+
+			targetVector[i] = nullptr;
 		}
 	}
+
 	targetVector.clear();
 #pragma endregion 씬이동시 설정한 오브젝트 제거 방지
 

@@ -49,7 +49,7 @@ void Test001::CoroutineTest()
 		SetPos(pos);
 		CallCount += 1;
 		new VWaitForSecond(0.1f);
-		if (CallCount > 15) { routineBrance += 1; }
+		if (CallCount > 1000) { routineBrance += 1; }
 
 	}
 	break;

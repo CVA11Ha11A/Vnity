@@ -121,7 +121,22 @@ void VCoroutineManager::AddCoroutine(VCoroutine* _routine)
 	m_vAddRouitnes.push_back(_routine);
 }
 
-VCoroutine* VCoroutineManager::FindCoroutine(const VObject* _owner)
+void VCoroutineManager::AddGarbageRoutine(list<VCoroutine*>& _lGarbages)
+{
+	list<VCoroutine*>::iterator iter = _lGarbages.begin();
+	for (; iter != _lGarbages.end(); iter++)
+	{
+#if _DEBUG
+		if (*iter == nullptr) { assert(nullptr); }
+#endif
+		m_vGarbageRoutines.push_back(*iter);
+	}
+	_lGarbages.clear();
+
+}
+
+// IsPop은 해당 객체를 list에서 뺄지 여부 기본으로는 false
+VCoroutine* VCoroutineManager::FindCoroutine(const VObject* _owner, bool _isPop = false)
 {
 	list<VCoroutine*>::iterator oneframeIter = m_lWaitForOneFrame.begin();
 	VCoroutine* routine;
@@ -130,6 +145,10 @@ VCoroutine* VCoroutineManager::FindCoroutine(const VObject* _owner)
 		routine = *oneframeIter;
 		if (routine->GetOwner() == _owner)
 		{
+			if (_isPop == true)
+			{
+				m_lWaitForOneFrame.erase(oneframeIter);
+			}
 			return routine;
 		}
 	}
@@ -140,6 +159,10 @@ VCoroutine* VCoroutineManager::FindCoroutine(const VObject* _owner)
 		routine = *secondIter;
 		if (routine->GetOwner() == _owner)
 		{
+			if (_isPop == true)
+			{
+				m_lWaitForSecond.erase(secondIter);
+			}
 			return routine;
 		}
 	}
@@ -160,7 +183,8 @@ void VCoroutineManager::CoroutineReSetting()
 
 		for (int j = 0; j < sceneObjs.size(); j++)
 		{	// for : 각 그룹의 DonDestory오브젝트들을 모아두는 작업
-			if (sceneObjs[j]->GetIsDonDestroy())
+
+			if (sceneObjs[j] != nullptr && sceneObjs[j]->GetIsDonDestroy())
 			{
 				vDonDesObjs.push_back(sceneObjs[j]);
 			}
@@ -169,28 +193,31 @@ void VCoroutineManager::CoroutineReSetting()
 
 
 	// 2.DonDestory인 오브젝트들의 목록을가지고 생존한 루틴을 추가함
-	vector<VObject*>::iterator iter = vDonDesObjs.begin();	
-
+	vector<VObject*>::iterator iter = vDonDesObjs.begin();
+	
 	for (; iter != vDonDesObjs.end(); iter++)
 	{
 		if (*iter == nullptr) { assert(nullptr); }
 		// DonDestory가 실행한 코루틴이 존재하는지 체크(없을경우 nullptr반환)
-		VCoroutine* routine = VCoroutineManager::GetInst()->FindCoroutine(*iter);
+		VCoroutine* routine = FindCoroutine(*iter, true);
 
 		if (routine != nullptr)
 		{
+
 			vAliveRoutine.push_back(routine);
 		}
 	}
 
-	// 3.현재씬에서 루틴으로 저장된 코루틴들을 모두 제거후 생존한 코루틴을 추가
-	m_lWaitForOneFrame.clear();
-	m_lWaitForSecond.clear();
+	// 3. Save되지않은 코루틴들은 전부 가비지로 추가
+	AddGarbageRoutine(m_lWaitForSecond);
+	AddGarbageRoutine(m_lWaitForOneFrame);
+
+	// 4.현재씬에서 루틴으로 저장된 코루틴들을 모두 제거후 생존한 코루틴을 추가
 
 	for (int i = 0; i < vAliveRoutine.size(); i++)
 	{
 		BranchCoroutine(vAliveRoutine[i]);
-	}
+	}	
 
 
 

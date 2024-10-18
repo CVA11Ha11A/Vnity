@@ -91,7 +91,8 @@ public:
 
 	void AddCoroutine(VCoroutine* _routine);		// 코루틴을 추가 예정해주는 함수(WaitFor에서 호출)
 	void AddGarbageRoutine(VCoroutine* _garbage) { m_vGarbageRoutines.push_back(_garbage); }
-	VCoroutine* FindCoroutine(const VObject* _owner);
+	void AddGarbageRoutine(list<VCoroutine*>& _vGarbages);
+	VCoroutine* FindCoroutine(const VObject* _owner, bool _isPop);
 	void CoroutineReSetting();		// 씬이동시 루틴들이 재설정되어야하는데
 	
 private:
