@@ -24,8 +24,7 @@ protected:
 	float m_fParam;					// float인자를 받는 함수를 위해 저장해둘곳
 
 	
-private:	
-	VObject* funcOwner;		// 코루틴을 실행요청한 객체(객체 제거시 StopCoroutine요청시 지워줄거임)
+private:		
 	//void (VObject::*vfunc)(void);				// 인자를 받지않는 함수 포인터
 	//void (VObject::*ffunc)(float);			// int인자를 받는 함수 포인터
 
@@ -35,6 +34,7 @@ private:
 public:
 	virtual bool Execute() = 0;		// 여기서 각각 자식 객체에서 자신이 불려도 되는지 계산할것임
 
+	const VObject* GetOwner() { return routineOwner; }
 
 protected:
 	void CallFunction();			// 저장하고 있던 함수 포인터로 실행하는 함수

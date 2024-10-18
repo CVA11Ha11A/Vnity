@@ -4,6 +4,7 @@
 
 class VUI : public VObject
 {   // UI의 좌상단 포지션은 해당 개체의 포지션 (Player같은건 중앙이 포지션임)
+    // TODO : UI 현재 사용불가(24.10.18) 씬이동시 객체 소멸자에서 Heap메모리 손상일어남 구조변경 필요
 
 private:
     vector<VUI*>    m_vecChildUI;       // UI가 가지고 있는 UI

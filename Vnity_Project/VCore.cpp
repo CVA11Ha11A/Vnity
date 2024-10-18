@@ -163,8 +163,8 @@ void VCore::Progress()
 	VSceneManager::GetInst()->Update();
 
 	// 内风凭 贸府
-	VCoroutineManager::GetInst()->UpdateWaitForOneFrame();
 	VCoroutineManager::GetInst()->UpdateWaitForSecond();
+	VCoroutineManager::GetInst()->UpdateWaitForOneFrame();
 
 	// 面倒眉农
 	VCollisionManager::GetInst()->Update();

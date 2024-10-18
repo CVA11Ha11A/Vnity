@@ -220,6 +220,7 @@
     <ClInclude Include="VTraceState.h" />
     <ClInclude Include="VUI.h" />
     <ClInclude Include="VUIManager.h" />
+    <ClInclude Include="VWaitForOneFrame.h" />
     <ClInclude Include="VWaitForSecond.h" />
   </ItemGroup>
   <ItemGroup>
@@ -265,6 +266,7 @@
     <ClCompile Include="VTraceState.cpp" />
     <ClCompile Include="VUI.cpp" />
     <ClCompile Include="VUIManager.cpp" />
+    <ClCompile Include="VWaitForOneFrame.cpp" />
     <ClCompile Include="VWaitForSecond.cpp" />
   </ItemGroup>
   <ItemGroup>

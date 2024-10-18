@@ -29,7 +29,7 @@ VScene_Tool::~VScene_Tool()
 }
 
 void VScene_Tool::SceneEnter()
-{	
+{
 	VCore::GetInst()->DockMenu();
 
 	// 타일 생성
@@ -38,23 +38,24 @@ void VScene_Tool::SceneEnter()
 	// UI 하나 만들어보기
 	Vector2 vResolution = VCore::GetInst()->GetResolution();
 
-	VUI* pPanelUI = new VPanelUI();
-	pPanelUI->SetName(L"ParentUI");
-	pPanelUI->SetScale(Vector2(500.f, 300.f));
-	pPanelUI->SetPos(Vector2(vResolution.x - pPanelUI->GetScale().x, 0.f));
-	AddObject(pPanelUI, GROUP_TYPE::UI);
+#pragma region UI	
+	//VUI* pPanelUI = new VPanelUI();
+	//pPanelUI->SetName(L"ParentUI");
+	//pPanelUI->SetScale(Vector2(500.f, 300.f));
+	//pPanelUI->SetPos(Vector2(vResolution.x - pPanelUI->GetScale().x, 0.f));
+	//AddObject(pPanelUI, GROUP_TYPE::UI);
+	//
+	//VButtonUI* pBtnUI = new VButtonUI();
+	//pBtnUI->SetName(L"ChildUI");
+	//pBtnUI->SetScale(Vector2(100.f, 40.f));
+	//pBtnUI->SetPos(Vector2(0.f, 0.f));
+	////((VButtonUI*)pBtnUI)->SetClickedCallBack(this, (SCENE_MEMFUNC)& VScene_Tool::SaveTileData);
+	//((VButtonUI*)pBtnUI)->SetClickedCallBack(this, (SCENE_MEMFUNC)&VScene_Tool::SaveTileData);
+	//
+	//pPanelUI->AddChild(pBtnUI);
 
-	VButtonUI* pBtnUI = new VButtonUI();
-	pBtnUI->SetName(L"ChildUI");
-	pBtnUI->SetScale(Vector2(100.f, 40.f));
-	pBtnUI->SetPos(Vector2(0.f, 0.f));
-	((VButtonUI*)pBtnUI)->SetClickedCallBack(this, (SCENE_MEMFUNC)& VScene_Tool::SaveTileData);
 
-	pPanelUI->AddChild(pBtnUI);
-
-
-
-	// UI 복사본
+		// UI 복사본
 	/*VUI* pClonePanel = pPanelUI->Clone();
 	pClonePanel->SetPos(pClonePanel->GetPos() + Vector2(-50.f, 0.f));
 	((VButtonUI*)pClonePanel->GetChildUI()[0])->SetClickedCallBack(&ChangeScene, 0, 0);
@@ -62,6 +63,10 @@ void VScene_Tool::SceneEnter()
 	AddObject(pClonePanel, E_GROUP_TYPE::UI);
 
 	m_pUI = pClonePanel;*/
+#pragma endregion UI
+
+
+
 
 	//Camera Look 지정	
 	VCamera::GetInst()->SetLookAt(vResolution / 2);

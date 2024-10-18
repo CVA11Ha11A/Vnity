@@ -3,6 +3,7 @@
 
 #include "VCoroutineManager.h"
 #include "VWaitForSecond.h"
+#include "VWaitForOneFrame.h"
 
 #include "VCamera.h"
 
@@ -37,7 +38,7 @@ private:
 
 private:
 	tObjInit	m_tInit;			// 오브젝트 Awake, Start함수 부를지 여부
-	bool		m_bIsDonDestroy;	// 오브젝트 제거 가능 여부(!씬 이동시!) (Alive 여부에는 파괴 가능)
+	bool		m_bIsDonDestroy;	// 오브젝트 제거 불가 상태인지(!씬 이동시!) (Alive 여부에는 파괴 가능)
 
 
 public:		// Get
@@ -54,7 +55,7 @@ public:		// Get
 	tObjInit& GetObjInitRef() { return this->m_tInit; }
 
 	const wstring& GetName() { return this->m_strName; }
-	bool GetIsDonDestroy() { return m_bIsDonDestroy; }
+	const bool GetIsDonDestroy() { return this->m_bIsDonDestroy; }
 	bool IsDead() { return !m_bAlive; }
 
 

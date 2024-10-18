@@ -18,6 +18,7 @@ Test001::~Test001()
 void Test001::Awake()
 {	
 	StartCoroutine<Test001>(&Test001::CoroutineTest, this);
+	DonDestroy();
 }
 
 void Test001::Start()
@@ -48,13 +49,20 @@ void Test001::CoroutineTest()
 		SetPos(pos);
 		CallCount += 1;
 		new VWaitForSecond(0.1f);
-		if (CallCount > 15) { routineBrance += 1; }
+		if (CallCount > 1000) { routineBrance += 1; }
 
 	}
 	break;
 	case 2:
 	{
-		int a = 0;
+		Vector2 pos = Vector2(GetPos().x + (1000 * DeltaTime), GetPos().y);
+		SetPos(pos);
+		CallCount += 1;
+		new VWaitForOneFrame();
+		if (CallCount > 500000) 
+		{
+			routineBrance += 1; 
+		}
 	}
 	break;
 	default:

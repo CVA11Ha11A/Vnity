@@ -30,7 +30,12 @@ VUI::VUI(const VUI& _origin)
 
 VUI::~VUI()
 {
-	Safe_Delete_Vec(m_vecChildUI);
+	if (m_pParentUI != nullptr)
+	{
+		m_pParentUI = nullptr;
+	}
+
+	Safe_Delete_Vec<VUI*>(m_vecChildUI);
 }
 
 
@@ -108,6 +113,10 @@ void VUI::Update_Child()
 {
 	for (size_t i = 0; i < m_vecChildUI.size(); ++i)
 	{
+		if (m_vecChildUI[i] == nullptr)
+		{
+			assert(nullptr);
+		}
 		m_vecChildUI[i]->Update();
 	}
 }
@@ -116,6 +125,10 @@ void VUI::FinalUpdate_Child()
 {
 	for (size_t i = 0; i < m_vecChildUI.size(); ++i)
 	{
+		if (m_vecChildUI[i] == nullptr)
+		{
+			assert(nullptr);
+		}
 		m_vecChildUI[i]->FinalUpdate();
 	}
 }
@@ -124,6 +137,10 @@ void VUI::Render_Child(HDC _dc)
 {
 	for (size_t i = 0; i < m_vecChildUI.size(); ++i)
 	{
+		if (m_vecChildUI[i] == nullptr)
+		{
+			assert(nullptr);
+		}
 		m_vecChildUI[i]->Render(_dc);
 	}
 }
