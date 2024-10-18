@@ -23,6 +23,10 @@
 #include "VRigidBody.h"
 #include "SelectGDI.h"
 
+// TestInclude
+#include "VUI.h"
+#include "VButtonUI.h"
+#include "VPanelUI.h"
 
 VScene_Start::VScene_Start()
 	:m_bUseForce(false)
@@ -126,6 +130,24 @@ void VScene_Start::SceneEnter()
 	AddObject(test, GROUP_TYPE::DEFAULT);
 
 
+	Vector2 vResolution = VCore::GetInst()->GetResolution();
+
+#pragma region UI
+	//// UI 하나 만들어보기
+	//VUI* pPanelUI = new VPanelUI();
+	//pPanelUI->SetName(L"ParentUI");
+	//pPanelUI->SetScale(Vector2(500.f, 300.f));
+	//pPanelUI->SetPos(Vector2(vResolution.x - pPanelUI->GetScale().x, 0.f));
+	//AddObject(pPanelUI, GROUP_TYPE::UI);
+	//
+	//VButtonUI* pBtnUI = new VButtonUI();
+	//pBtnUI->SetName(L"ChildUI");
+	//pBtnUI->SetScale(Vector2(100.f, 40.f));
+	//pBtnUI->SetPos(Vector2(0.f, 0.f));		
+	//pPanelUI->AddChild(pBtnUI);
+#pragma endregion UI
+
+
 	// Object추가 Player
 	VObject* pObj = new VPlayer();
 	pObj->SetName(L"Player");
@@ -138,7 +160,7 @@ void VScene_Start::SceneEnter()
 
 
 	// 몬스터 배치
-	Vector2 vResolution = VCore::GetInst()->GetResolution();
+	//Vector2 vResolution = VCore::GetInst()->GetResolution();
 	/*
 	VMonster* pMon = VMonFactory::CreateMonster(MON_TYPE::NOMAL, vResolution / 2.f - Vector2(0.f, 300.f));
 	AddObject(pMon, GROUP_TYPE::MONSTER);*/

@@ -11,12 +11,13 @@ void ChangeAIState(VAI* _pAI, MON_STATE _eNextState);
 
 template<typename T>
 void Safe_Delete_Vec(vector<T>& _vec)
-{
+  {	
 	for (size_t i = 0; i < _vec.size(); ++i)
 	{
 		if (_vec[i] != nullptr)
-		{
+		{			
 			delete _vec[i];
+			_vec[i] = nullptr;
 		}
 	}
 	_vec.clear();

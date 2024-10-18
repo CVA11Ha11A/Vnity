@@ -61,11 +61,12 @@ void VEventManager::Execute(const tEvent& _event)
 	break;
 	case E_EVENT_TYPE::SCENE_CHANGE:
 	{	// lParam : Next Scene Type
-		// Scene변경
-		VSceneManager::GetInst()->ChangeScene((E_SCENE_TYPE)_event.lParam);
-
+		
 		// 포커스 UI 해제 (이전 Scene의 포커스된 UI의 포인터를 가지고 있기 때문)
 		VUIManager::GetInst()->SetFocusedUI(nullptr);
+
+		// Scene변경
+		VSceneManager::GetInst()->ChangeScene((E_SCENE_TYPE)_event.lParam);
 	}
 	break;
 	case E_EVENT_TYPE::CHANGE_AI_STATE:
